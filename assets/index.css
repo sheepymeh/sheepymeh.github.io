@@ -1,0 +1,124 @@
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+html {
+	scroll-behavior: smooth;
+}
+body {
+	font: 1.2em/1.7 Inter, sans-serif;
+	background-color: #eceff1;
+	color: #212121;
+}
+h1, h2, h3 {
+	font-family: Nunito, Inter, sans-serif;
+	font-weight: 600;
+	margin: .4em 0;
+	line-height: 1.4;
+}
+h1 {
+	margin: .67em 0;
+}
+img, .material-icons {
+	vertical-align: middle;
+	user-select: none;
+}
+a {
+	color: inherit;
+}
+
+header {
+	padding: 20px;
+	padding-top: 12vh;
+	background-color: #263238;
+	color: #bbb;
+	min-height: 100vh;
+	position: relative;
+}
+header h1, header h2 {
+	color: #eee;
+}
+#header-dynamic {
+	margin-left: -3px;
+}
+#header-dynamic::after {
+	font: 400 1em Inter, sans-serif;
+	transform: translateY(-5px);
+	content: '|';
+}
+#header-dynamic.stopped::after {
+	animation: .3s linear 0s infinite alternate running flashing-cursor;
+}
+@keyframes flashing-cursor {
+	from {
+		opacity: 1;
+	}
+	42% {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
+header a {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 120px;
+}
+header a:after {
+	content: '';
+	position: absolute;
+	bottom: 60px;
+	left: 50%;
+	transform: translate(-50%, 0) rotate(45deg);
+	border: solid #fff;
+	border-width: 0 2px 2px 0;
+	width: 10px;
+	height: 10px;
+	display: inline-block;
+	transition: .15s transform ease-in-out;
+}
+header a:hover:after {
+	transform: translate(-50%, -16px) rotate(45deg);
+}
+#header-email:after {
+	user-select: inherit;
+	content: '@tuta.io';
+}
+header img {
+	opacity: .69;
+}
+
+section {
+	min-height: calc(100vh - 20px);
+	width: calc(100% - 20px);
+	max-width: 450px;
+	margin: auto;
+	padding: 30px 0;
+	border-bottom: 1px solid #ccc;
+}
+section:last-of-type {
+	border-bottom: none;
+}
+section h1 {
+	margin-top: 0;
+}
+
+article {
+	margin-bottom: 42px;
+}
+article picture img {
+	width: 100%;
+	border-radius: 4px;
+	box-shadow: 0 1px 10px rgba(0, 0, 0, .3);
+}
+article > div > div:first-of-type {
+	margin-top: 7px;
+}
+
+@media screen and (min-width: 510px) {
+	header {
+		padding: 20vh calc(calc(100% - 450px) / 2);
+	}
+}

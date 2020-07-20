@@ -1,0 +1,39 @@
+header {
+	padding: 25vh 30px;
+}
+header:after {
+	content: 'i run arch btw';
+	margin: 1em 0;
+	display: block;
+}
+section {
+	max-width: 1000px;
+	width: calc(100% - 60px);
+}
+article {
+	display: flex;
+	margin-bottom: 69px;
+}
+article picture img {
+	max-width: 450px;
+	height: auto;
+	margin-right: 40px;
+}
+article:nth-of-type(even) {
+	flex-direction: row-reverse;
+}
+article:nth-of-type(even) picture img {
+	margin: 0 0 0 40px;
+}
+article > div {
+	flex: 1
+}
+article > div > div:first-of-type {
+	margin-top: 15px;
+}
+
+@media screen and (min-width: 1060px) {
+	header {
+		padding: 25vh calc(calc(100% - 970px) / 2);
+	}
+}
